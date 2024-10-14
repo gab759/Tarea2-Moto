@@ -12,7 +12,8 @@ public class CandyGenerator : MonoBehaviour
     private float limitSuperior;
     private float limitInferior;
     public List<GameObject> actual_candies = new List<GameObject>();
-
+    [SerializeField] private AudioSource eatSfx;
+    [SerializeField] SoundConfig sfx;
     void Awake()
     {
         if (instance != null && instance != this)
@@ -55,22 +56,8 @@ public class CandyGenerator : MonoBehaviour
             Destroy(candy_script.gameObject);
             return;
         }
-        if (candy_script.frame == 3)
-        {
-            //SceneManager.LoadScene("GameOver");
-            return;
-        }
-        int lives = player_script.player_lives;
-        int live_changer = candy_script.lifeChanges;
-        lives += live_changer;
-        print(lives);
-        if (lives <= 0)
-        {
-            //SceneManager.LoadScene("GameOver");
-        }
-        player_script.player_lives = lives;
+        eatSfx.clip = sfx.SoundClip;
+        eatSfx.Play();
         Destroy(candy_script.gameObject);
     }
-
-
 }

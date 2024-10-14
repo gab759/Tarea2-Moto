@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 796202909351046518}
   - component: {fileID: 2528567699219879130}
   - component: {fileID: 42574668059830230}
-  - component: {fileID: 5123947216946071333}
+  - component: {fileID: -4198843734855085024}
   m_Layer: 0
   m_Name: Zeppelin
   m_TagString: Enemy
@@ -122,8 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 2
-  player: {fileID: 0}
 --- !u!50 &42574668059830230
 Rigidbody2D:
   serializedVersion: 4
@@ -151,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &5123947216946071333
+--- !u!61 &-4198843734855085024
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

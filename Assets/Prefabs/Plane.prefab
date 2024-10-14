@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 600357723224551478}
   - component: {fileID: 4919483210151849436}
   - component: {fileID: 7805791736613786630}
-  - component: {fileID: 3150783948054243944}
+  - component: {fileID: -2868342650169844867}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Enemy
@@ -122,8 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
-  speed: 4
-  player: {fileID: 0}
 --- !u!50 &7805791736613786630
 Rigidbody2D:
   serializedVersion: 4
@@ -151,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &3150783948054243944
+--- !u!61 &-2868342650169844867
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

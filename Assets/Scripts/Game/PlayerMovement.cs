@@ -76,10 +76,10 @@ public class PlayerMovement : MonoBehaviour
         else if (other.tag == "Enemy" && !isInvulnerable)
         {
             EnemyController enemy = other.gameObject.GetComponent<EnemyController>();
+            EnemyGenerator.instance.ManageEnemy(other.gameObject.GetComponent<EnemyController>(), this);
             UpdateLife(enemy.damage);
             StartCoroutine(Invulnerable());
             transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
-            Destroy(other.gameObject);
         }
     }
     private void ChangeScene()

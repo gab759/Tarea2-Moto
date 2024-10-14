@@ -5,15 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class EnemyGenerator : MonoBehaviour
 {
+    public static EnemyGenerator instance;
     public List<GameObject> Enemies = new List<GameObject>(); 
     private float time_to_create = 4f; 
     private float actual_time = 0f;
-    
-    [SerializeField] private AudioSource hitSfx; 
     private float limitSuperior;
     private float limitInferior;
     public List<GameObject> actual_enemies = new List<GameObject>();
+    [SerializeField] private AudioSource sfxEnemyHurt;
+    [SerializeField] private AudioSource sfxEnemyHit;
+    [SerializeField] SoundConfig sfxHurt;
+    [SerializeField] SoundConfig sfxHit;
 
+    void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -54,9 +65,12 @@ public class EnemyGenerator : MonoBehaviour
 
         if (lives <= 0)
         {
-            SceneManager.LoadScene("GameOver");
+            //SceneManager.LoadScene("GameOver");
         }
-
+        sfxEnemyHurt.clip = sfxHurt.SoundClip;
+        sfxEnemyHit.clip = sfxHit.SoundClip;
+        sfxEnemyHurt.Play();
+        sfxEnemyHit.Play();
         Destroy(enemy_script.gameObject);
     }
 }

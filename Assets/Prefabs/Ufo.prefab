@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4292125822308767032}
   - component: {fileID: 424457482674211225}
   - component: {fileID: 6570384279951829240}
-  - component: {fileID: 7989811249538502651}
+  - component: {fileID: -4241240442579158936}
   m_Layer: 0
   m_Name: Ufo
   m_TagString: Enemy
@@ -122,8 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 2
-  player: {fileID: 0}
 --- !u!50 &6570384279951829240
 Rigidbody2D:
   serializedVersion: 4
@@ -151,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &7989811249538502651
+--- !u!61 &-4241240442579158936
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
