@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
         sliderMusic.onValueChanged.AddListener(SetMusicVolume);
         sliderSfx.onValueChanged.AddListener(SetSFXVolume);
     }
-
+    private float previousMasterVolume = 0.5f;
     public void SetMasterVolume(float value)
     {
         masterVolumeConfig.volume = Mathf.Clamp(value, 0f, 1f);
@@ -41,5 +41,16 @@ public class AudioManager : MonoBehaviour
     {
         sfxVolumeConfig.volume = Mathf.Clamp(value, 0f, 1f);
         _compAudioMixer.SetFloat("SFX", Mathf.Log10(value) * 20);
+    }
+    public void MuteAllSounds()
+    {
+        _compAudioMixer.GetFloat("Master", out previousMasterVolume);
+
+        _compAudioMixer.SetFloat("Master", -80f);
+    }
+
+    public void UnmuteAllSounds()
+    {
+        _compAudioMixer.SetFloat("Master", previousMasterVolume);
     }
 }
