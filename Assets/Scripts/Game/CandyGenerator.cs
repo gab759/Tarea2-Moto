@@ -57,7 +57,7 @@ public class CandyGenerator : MonoBehaviour
         }
         if (candy_script.frame == 3)
         {
-            SceneManager.LoadScene("GameOver");
+            //SceneManager.LoadScene("GameOver");
             return;
         }
         int lives = player_script.player_lives;
@@ -66,7 +66,7 @@ public class CandyGenerator : MonoBehaviour
         print(lives);
         if (lives <= 0)
         {
-            SceneManager.LoadScene("GameOver");
+            //SceneManager.LoadScene("GameOver");
         }
         player_script.player_lives = lives;
         Destroy(candy_script.gameObject);
